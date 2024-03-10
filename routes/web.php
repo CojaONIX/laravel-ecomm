@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\URL;
 |
 */
 
-URL::forceScheme('https');
+//URL::forceScheme('https');
 
 Route::get('/', [HomepageController::class, 'index'])->name('home.page');
 
