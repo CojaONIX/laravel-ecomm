@@ -82,7 +82,7 @@ Route::controller(TestController::class)
         ->prefix('/test')
         ->group(function () {
             Route::get('/','showTest')->name('test.page');
-            Route::post('/', 'ajaxGetTestData');
+            Route::post('/', 'ajaxGetTestData')->name('test.get.data');
         });
 
 
