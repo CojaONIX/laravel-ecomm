@@ -44,9 +44,13 @@
                 <div class="nav-item dropdown ms-3">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hello, {{ Auth::user()->name}}</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{ route('admin.contact.all.page') }}">allContacts</a></li>
-                        <li><a class="dropdown-item" href="{{ route('admin.product.all.page') }}">allProducts</a></li>
-                        <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Profile</a></li>
+
+                        @if(Auth::user()->role == 'admin')
+                            <li><a class="dropdown-item" href="{{ route('admin.contact.all.page') }}">allContacts</a></li>
+                            <li><a class="dropdown-item" href="{{ route('admin.product.all.page') }}">allProducts</a></li>
+                            <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Profile</a></li>
+                        @endif
+
                         <li><hr class="dropdown-divider"></li>
                         <li>
                             <form method="post" action="{{ route('logout') }}" class="dropdown-item">
